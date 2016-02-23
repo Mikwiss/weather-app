@@ -54,6 +54,11 @@
 		5B1FDBE81C7CDF8800658AEA /* weather-by-mikwiss */ = {
 			isa = PBXGroup;
 			children = (
+				5B1FDBFF1C7CDFEE00658AEA /* Constants */,
+				5B1FDBFE1C7CDFDE00658AEA /* Utils */,
+				5B1FDBFD1C7CDFBF00658AEA /* Model */,
+				5B1FDBFC1C7CDFAD00658AEA /* View */,
+				5B1FDBFB1C7CDF9400658AEA /* ViewController */,
 				5B1FDBE91C7CDF8800658AEA /* AppDelegate.swift */,
 				5B1FDBEB1C7CDF8800658AEA /* ViewController.swift */,
 				5B1FDBED1C7CDF8800658AEA /* Main.storyboard */,
@@ -62,6 +67,46 @@
 				5B1FDBF51C7CDF8800658AEA /* Info.plist */,
 			);
 			path = "weather-by-mikwiss";
+			sourceTree = "<group>";
+		};
+		5B1FDBFB1C7CDF9400658AEA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewController;
+			path = ../ViewController;
+			sourceTree = "<group>";
+		};
+		5B1FDBFC1C7CDFAD00658AEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			path = ../View;
+			sourceTree = "<group>";
+		};
+		5B1FDBFD1C7CDFBF00658AEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = ../Model;
+			sourceTree = "<group>";
+		};
+		5B1FDBFE1C7CDFDE00658AEA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
+			path = ../Utils;
+			sourceTree = "<group>";
+		};
+		5B1FDBFF1C7CDFEE00658AEA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Constants;
+			path = ../Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

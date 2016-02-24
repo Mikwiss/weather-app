@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		5B1FDBEA1C7CDF8800658AEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1FDBE91C7CDF8800658AEA /* AppDelegate.swift */; };
-		5B1FDBEC1C7CDF8800658AEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1FDBEB1C7CDF8800658AEA /* ViewController.swift */; };
-		5B1FDBEF1C7CDF8800658AEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B1FDBED1C7CDF8800658AEA /* Main.storyboard */; };
 		5B1FDBF11C7CDF8800658AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B1FDBF01C7CDF8800658AEA /* Assets.xcassets */; };
 		5B1FDBF41C7CDF8800658AEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B1FDBF21C7CDF8800658AEA /* LaunchScreen.storyboard */; };
+		5B1FDC021C7DDAB800658AEA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1FDC001C7DDAB800658AEA /* MainViewController.swift */; };
+		5B1FDC031C7DDAB800658AEA /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B1FDC011C7DDAB800658AEA /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5B1FDBE61C7CDF8800658AEA /* weather-by-mikwiss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-by-mikwiss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1FDBE91C7CDF8800658AEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B1FDBEB1C7CDF8800658AEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5B1FDBEE1C7CDF8800658AEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B1FDBF01C7CDF8800658AEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B1FDBF31C7CDF8800658AEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B1FDBF51C7CDF8800658AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B1FDC001C7DDAB800658AEA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5B1FDC011C7DDAB800658AEA /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = "weather-by-mikwiss/View/MainViewController.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,6 @@
 				5B1FDBFC1C7CDFAD00658AEA /* View */,
 				5B1FDBFB1C7CDF9400658AEA /* ViewController */,
 				5B1FDBE91C7CDF8800658AEA /* AppDelegate.swift */,
-				5B1FDBEB1C7CDF8800658AEA /* ViewController.swift */,
-				5B1FDBED1C7CDF8800658AEA /* Main.storyboard */,
 				5B1FDBF01C7CDF8800658AEA /* Assets.xcassets */,
 				5B1FDBF21C7CDF8800658AEA /* LaunchScreen.storyboard */,
 				5B1FDBF51C7CDF8800658AEA /* Info.plist */,
@@ -72,41 +70,38 @@
 		5B1FDBFB1C7CDF9400658AEA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5B1FDC001C7DDAB800658AEA /* MainViewController.swift */,
 			);
-			name = ViewController;
-			path = ../ViewController;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		5B1FDBFC1C7CDFAD00658AEA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B1FDC011C7DDAB800658AEA /* MainViewController.xib */,
 			);
-			name = View;
-			path = ../View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		5B1FDBFD1C7CDFBF00658AEA /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Model;
-			path = ../Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5B1FDBFE1C7CDFDE00658AEA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Utils;
-			path = ../Utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		5B1FDBFF1C7CDFEE00658AEA /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Constants;
-			path = ../Constants;
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,8 +163,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B1FDBF41C7CDF8800658AEA /* LaunchScreen.storyboard in Resources */,
+				5B1FDC031C7DDAB800658AEA /* MainViewController.xib in Resources */,
 				5B1FDBF11C7CDF8800658AEA /* Assets.xcassets in Resources */,
-				5B1FDBEF1C7CDF8800658AEA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,22 +175,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B1FDBEC1C7CDF8800658AEA /* ViewController.swift in Sources */,
 				5B1FDBEA1C7CDF8800658AEA /* AppDelegate.swift in Sources */,
+				5B1FDC021C7DDAB800658AEA /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5B1FDBED1C7CDF8800658AEA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B1FDBEE1C7CDF8800658AEA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5B1FDBF21C7CDF8800658AEA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -298,6 +285,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mikwiss.weather-by-mikwiss";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -309,6 +297,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mikwiss.weather-by-mikwiss";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

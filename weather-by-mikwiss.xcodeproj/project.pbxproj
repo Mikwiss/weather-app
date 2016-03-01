@@ -12,6 +12,9 @@
 		5B1FDBF41C7CDF8800658AEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B1FDBF21C7CDF8800658AEA /* LaunchScreen.storyboard */; };
 		5B1FDC021C7DDAB800658AEA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1FDC001C7DDAB800658AEA /* MainViewController.swift */; };
 		5B1FDC031C7DDAB800658AEA /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B1FDC011C7DDAB800658AEA /* MainViewController.xib */; };
+		5B5B41041C85C52D00E9375C /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B41031C85C52D00E9375C /* DayTime.swift */; };
+		5BA177811C820D94007EE73A /* DayWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA177801C820D94007EE73A /* DayWeatherViewController.swift */; };
+		5BA177851C820FD3007EE73A /* DayWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA177841C820FD3007EE73A /* DayWeatherView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		5B1FDBF51C7CDF8800658AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B1FDC001C7DDAB800658AEA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5B1FDC011C7DDAB800658AEA /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = "weather-by-mikwiss/View/MainViewController.xib"; sourceTree = SOURCE_ROOT; };
+		5B5B41031C85C52D00E9375C /* DayTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
+		5BA177801C820D94007EE73A /* DayWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayWeatherViewController.swift; sourceTree = "<group>"; };
+		5BA177841C820FD3007EE73A /* DayWeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayWeatherView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				5B1FDC001C7DDAB800658AEA /* MainViewController.swift */,
+				5BA177801C820D94007EE73A /* DayWeatherViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -79,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				5B1FDC011C7DDAB800658AEA /* MainViewController.xib */,
+				5BA177841C820FD3007EE73A /* DayWeatherView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +101,7 @@
 		5B1FDBFE1C7CDFDE00658AEA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5B5B41031C85C52D00E9375C /* DayTime.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -162,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA177851C820FD3007EE73A /* DayWeatherView.xib in Resources */,
 				5B1FDBF41C7CDF8800658AEA /* LaunchScreen.storyboard in Resources */,
 				5B1FDC031C7DDAB800658AEA /* MainViewController.xib in Resources */,
 				5B1FDBF11C7CDF8800658AEA /* Assets.xcassets in Resources */,
@@ -175,6 +185,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA177811C820D94007EE73A /* DayWeatherViewController.swift in Sources */,
+				5B5B41041C85C52D00E9375C /* DayTime.swift in Sources */,
 				5B1FDBEA1C7CDF8800658AEA /* AppDelegate.swift in Sources */,
 				5B1FDC021C7DDAB800658AEA /* MainViewController.swift in Sources */,
 			);
@@ -320,6 +332,7 @@
 				5B1FDBFA1C7CDF8800658AEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

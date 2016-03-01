@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DayWeatherViewController" customModule="weather_by_mikwiss" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="300" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12AM" translatesAutoresizingMaskIntoConstraints="NO" id="0H6-zS-prZ" userLabel="DayTime">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="i0P-Pn-fXu"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CloudySun" translatesAutoresizingMaskIntoConstraints="NO" id="mHz-dv-BX0">
+                    <rect key="frame" x="0.0" y="40" width="300" height="210"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8YO-Sp-gPa" userLabel="InfoWeather">
+                    <rect key="frame" x="0.0" y="250" width="300" height="50"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12AM" translatesAutoresizingMaskIntoConstraints="NO" id="56w-QN-rau">
+                            <rect key="frame" x="0.0" y="0.0" width="71.5" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="RLP-Rb-WEA"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUI-Kj-flS">
+                            <rect key="frame" x="76" y="0.0" width="71" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="dWj-bk-P2v"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CloudySun" translatesAutoresizingMaskIntoConstraints="NO" id="D6U-J8-3nP">
+                            <rect key="frame" x="152" y="0.0" width="71.5" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Aoo-1X-cDN"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ra9-GO-dwj">
+                            <rect key="frame" x="229" y="0.0" width="71" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="5uD-8U-dmJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="0H6-zS-prZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3ce-da-Ztn"/>
+                <constraint firstAttribute="trailing" secondItem="mHz-dv-BX0" secondAttribute="trailing" id="6h1-6J-myX"/>
+                <constraint firstAttribute="bottom" secondItem="mHz-dv-BX0" secondAttribute="bottom" constant="50" id="Ay6-Gy-IYd"/>
+                <constraint firstItem="mHz-dv-BX0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IU8-pe-v2C"/>
+                <constraint firstAttribute="bottom" secondItem="8YO-Sp-gPa" secondAttribute="bottom" id="YHN-Pu-ZHy"/>
+                <constraint firstAttribute="trailing" secondItem="0H6-zS-prZ" secondAttribute="trailing" id="ge5-rn-Ow3"/>
+                <constraint firstItem="0H6-zS-prZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lDc-C1-puf"/>
+                <constraint firstItem="mHz-dv-BX0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="moO-eM-9yi"/>
+                <constraint firstItem="8YO-Sp-gPa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="td6-Ks-hQc"/>
+                <constraint firstAttribute="trailing" secondItem="8YO-Sp-gPa" secondAttribute="trailing" id="uTp-fd-JwI"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="270" y="439"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="12AM" width="700" height="700"/>
+        <image name="CloudySun" width="700" height="700"/>
+    </resources>
+</document>

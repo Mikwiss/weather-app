@@ -7,16 +7,25 @@
 //
 
 import Foundation
+import Alamofire
 
 class WeatherService {
     
     ///
     /// MARK : Properties
     ///
-    private var apiKey : String = "8919a910467221c964821b0dd40f7916";
-    private var urlBAse : String = "api.openweathermap.org/";
-    private var urlData25 : String = "data/2.5/"
-    private var urlWeatherForCityID : String = "weather?id="
+    private let apiKey : String = "8919a910467221c964821b0dd40f7916";
+    private let urlBAse : String = "http://api.openweathermap.org/";
+    private let urlData25 : String = "data/2.5/"
+    private let urlForecast : String = "forecast/"
+    private let urlWeatherForCityID : String = "daily?id="
+    private let urlAPPID : String = "&APPID=";
+    private let urlLanguage : String = "&lang=";
+    private let urlUnitMetric : String = "&units=metric";
+    
+    private let fr : String = "fr"
+    
+    typealias downloadComplete = () -> ();
     
     ///
     /// MARK : Init
@@ -29,5 +38,16 @@ class WeatherService {
     ///
     /// MARK : Methods
     ///
-    
+    func getWeatherForCity(id : Int, completed : downloadComplete)
+    {
+        let url = NSURL(string: "\(urlBAse)\(urlData25)\(urlForecast)\(urlWeatherForCityID)\(id)\(urlUnitMetric)\(urlLanguage)\(fr)\(urlAPPID)\(apiKey)")!;
+        Alamofire.request(.GET, url).responseJSON { response in
+            let result = response.result;
+            print(".GET \(url) : \(result)");
+            if (result.isSuccess)
+            {
+                
+            }
+        }
+    }
 }

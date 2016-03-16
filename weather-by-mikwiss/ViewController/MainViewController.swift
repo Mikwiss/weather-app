@@ -14,6 +14,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     /// MARK : properties
     ///
     private var _days : [Int]!;
+    private var _weatherService : WeatherService!;
     
     ///
     /// MARK : outlets
@@ -47,6 +48,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         dayCollectionView.delegate = self;
         dayCollectionView.dataSource = self;
         dayCollectionView.pagingEnabled = true;
+        
+        _weatherService = WeatherService();
+        
+        _weatherService.getWeatherForCity(3031582) { () -> () in
+            //After download
+        }
     }
 
     override func didReceiveMemoryWarning() {

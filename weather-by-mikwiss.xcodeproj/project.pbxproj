@@ -22,9 +22,12 @@
 		5BE3F3E81C8F024C0022E174 /* MomentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3F3E61C8F024C0022E174 /* MomentViewCell.swift */; };
 		5BE3F3E91C8F024C0022E174 /* MomentViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE3F3E71C8F024C0022E174 /* MomentViewCell.xib */; };
 		5BE3F3EC1C9048220022E174 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE3F3EB1C9048220022E174 /* Helper.swift */; };
+		7D24CDA387A35F8AAA2F4BCB /* Pods_weather_by_mikwiss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2402C033EF7042D377BE6166 /* Pods_weather_by_mikwiss.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2402C033EF7042D377BE6166 /* Pods_weather_by_mikwiss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weather_by_mikwiss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3346F065B21771D9BB635E4D /* Pods-weather-by-mikwiss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather-by-mikwiss.release.xcconfig"; path = "Pods/Target Support Files/Pods-weather-by-mikwiss/Pods-weather-by-mikwiss.release.xcconfig"; sourceTree = "<group>"; };
 		5B1FDBE61C7CDF8800658AEA /* weather-by-mikwiss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-by-mikwiss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1FDBE91C7CDF8800658AEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B1FDBF01C7CDF8800658AEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		5BE3F3E61C8F024C0022E174 /* MomentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentViewCell.swift; sourceTree = "<group>"; };
 		5BE3F3E71C8F024C0022E174 /* MomentViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MomentViewCell.xib; sourceTree = "<group>"; };
 		5BE3F3EB1C9048220022E174 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		941CFCD2A81143B9D4167AEF /* Pods-weather-by-mikwiss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather-by-mikwiss.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weather-by-mikwiss/Pods-weather-by-mikwiss.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +53,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D24CDA387A35F8AAA2F4BCB /* Pods_weather_by_mikwiss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14F3F6CE811225770CB37B9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				941CFCD2A81143B9D4167AEF /* Pods-weather-by-mikwiss.debug.xcconfig */,
+				3346F065B21771D9BB635E4D /* Pods-weather-by-mikwiss.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3055473BCD7FD3D036932BBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2402C033EF7042D377BE6166 /* Pods_weather_by_mikwiss.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5B1FDBDD1C7CDF8800658AEA = {
 			isa = PBXGroup;
 			children = (
 				5B1FDBE81C7CDF8800658AEA /* weather-by-mikwiss */,
 				5B1FDBE71C7CDF8800658AEA /* Products */,
+				14F3F6CE811225770CB37B9F /* Pods */,
+				3055473BCD7FD3D036932BBD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B1FDBF81C7CDF8800658AEA /* Build configuration list for PBXNativeTarget "weather-by-mikwiss" */;
 			buildPhases = (
+				D5D6E3EA0ACC4F9A922096EA /* Check Pods Manifest.lock */,
 				5B1FDBE21C7CDF8800658AEA /* Sources */,
 				5B1FDBE31C7CDF8800658AEA /* Frameworks */,
 				5B1FDBE41C7CDF8800658AEA /* Resources */,
+				2EA1E272A39FE5F87514939E /* Embed Pods Frameworks */,
+				AF26C829E6D1B487D696DF2D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +245,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2EA1E272A39FE5F87514939E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weather-by-mikwiss/Pods-weather-by-mikwiss-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF26C829E6D1B487D696DF2D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weather-by-mikwiss/Pods-weather-by-mikwiss-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5D6E3EA0ACC4F9A922096EA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B1FDBE21C7CDF8800658AEA /* Sources */ = {
@@ -335,6 +410,7 @@
 		};
 		5B1FDBF91C7CDF8800658AEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 941CFCD2A81143B9D4167AEF /* Pods-weather-by-mikwiss.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "weather-by-mikwiss/Info.plist";
@@ -347,6 +423,7 @@
 		};
 		5B1FDBFA1C7CDF8800658AEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3346F065B21771D9BB635E4D /* Pods-weather-by-mikwiss.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "weather-by-mikwiss/Info.plist";

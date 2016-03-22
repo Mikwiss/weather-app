@@ -13,27 +13,34 @@ class WeatherDay {
     ///
     /// MARK : properties
     ///
-    private var _day : String!;
+    private var _day : Int!;
     private var _temp : Double!;
     private var _tempMax : Double!;
     private var _tempMin : Double!;
-    private var _pressure : Int!;
+    private var _pressure : Double!;
     private var _humidity : Int!;
     private var _speed : Double!;
-    private var _mainWeather : String!;
+    private var _mainWeather : Weather!;
     
     ///
     /// MARK : init
     ///
     init()
     {
-        
+        _day = 0;
+        _temp = Double.NaN;
+        _tempMax = Double.NaN;
+        _tempMin = Double.NaN;
+        _pressure = Double.NaN;
+        _speed = Double.NaN;
+        _humidity = 0;
+        _mainWeather = Weather(id: 0, desc: "---", main: "---", icon: "---");
     }
     
     ///
     /// MARK : members
     ///
-    var Day : String {
+    var Day : Int {
         get {
             return _day;
         }
@@ -73,7 +80,7 @@ class WeatherDay {
         }
     }
     
-    var Pressure : Int {
+    var Pressure : Double {
         get {
             return _pressure;
         }
@@ -103,7 +110,7 @@ class WeatherDay {
         }
     }
     
-    var MainWeather : String {
+    var MainWeather : Weather {
         get {
             return _mainWeather;
         }
@@ -112,8 +119,4 @@ class WeatherDay {
             _mainWeather = value;
         }
     }
-    
-    ///
-    /// MARK : methods
-    ///
 }

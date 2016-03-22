@@ -25,7 +25,7 @@ class WeatherService {
     
     private let fr : String = "fr"
     
-    typealias downloadComplete = () -> ();
+    typealias downloadComplete = ([WeatherDay]) -> ();
     
     ///
     /// MARK : Init
@@ -42,12 +42,76 @@ class WeatherService {
     {
         let url = NSURL(string: "\(urlBAse)\(urlData25)\(urlForecast)\(urlWeatherForCityID)\(id)\(urlUnitMetric)\(urlLanguage)\(fr)\(urlAPPID)\(apiKey)")!;
         Alamofire.request(.GET, url).responseJSON { response in
+            
+            var resultWeather = [WeatherDay]();
+            
             let result = response.result;
+            
             print(".GET \(url) : \(result)");
+            
             if (result.isSuccess)
             {
+                print(result.value.debugDescription);
                 
+                if let dict = result.value as? Dictionary<String, AnyObject>
+                {
+                    if let listDay = dict["list"] as? [Dictionary<String, AnyObject>]
+                    {
+                        for var i = 0 ; i < listDay.count ; i++
+                        {
+                            let w = WeatherDay();
+                            
+                            if let date = listDay[i]["dt"] as? Int
+                            {
+                                w.Day = date;
+                            }
+                            
+                            if let weather = listDay[i]["weather"] as? [Dictionary<String, AnyObject>]
+                            {
+                                if let id = weather[0]["id"] as? Int, let desc = weather[0]["description"] as? String
+                                    
+                                {
+                                    w.MainWeather = Weather(id: id, desc: desc, main: "", icon: "");
+                                }
+                            }
+                            
+                            if let humidity = listDay[i]["humidity"] as? Int
+                            {
+                                w.Humidity = humidity;
+                            }
+                            
+                            if let speed = listDay[i]["speed"] as? Double
+                            {
+                                w.Speed = speed;
+                            }
+                            
+                            if let pressure = listDay[i]["pressure"] as? Double
+                            {
+                                w.Pressure = pressure;
+                            }
+                            
+                            if let temps = listDay[i]["temp"] as? Dictionary<String, AnyObject>
+                            {
+                                if let currentTemp = temps["day"] as? Double{
+                                    w.Temp = currentTemp;
+                                }
+                                
+                                if let maxTemp = temps["max"] as? Double{
+                                    w.TempMax = maxTemp;
+                                }
+                                
+                                if let minTemp = temps["min"] as? Double{
+                                    w.TempMin = minTemp;
+                                }
+                            }
+
+                            resultWeather.append(w);
+                        }
+                    }
+                }
             }
+            
+            completed(resultWeather);
         }
     }
 }

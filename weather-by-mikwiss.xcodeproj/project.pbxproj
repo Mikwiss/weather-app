@@ -14,8 +14,9 @@
 		5B1FDC031C7DDAB800658AEA /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B1FDC011C7DDAB800658AEA /* MainViewController.xib */; };
 		5B2F326E1C997F3C00238FAD /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2F326D1C997F3C00238FAD /* WeatherService.swift */; };
 		5B5B41041C85C52D00E9375C /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B41031C85C52D00E9375C /* DayTime.swift */; };
-		5B7C65A61C98390F00CBF45D /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C65A51C98390F00CBF45D /* LabelExtension.swift */; };
 		5B961F861C99D9180051B20D /* WeatherDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B961F851C99D9180051B20D /* WeatherDay.swift */; };
+		5B961F891C99DD220051B20D /* WeatherEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B961F881C99DD220051B20D /* WeatherEnum.swift */; };
+		5BA0BF721C9AD25A005D7143 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0BF711C9AD25A005D7143 /* Weather.swift */; };
 		5BA177811C820D94007EE73A /* DayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA177801C820D94007EE73A /* DayWeatherView.swift */; };
 		5BA177851C820FD3007EE73A /* DayWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA177841C820FD3007EE73A /* DayWeatherView.xib */; };
 		5BE3F3D51C8E1EDE0022E174 /* HourWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE3F3D41C8E1EDE0022E174 /* HourWeatherView.xib */; };
@@ -38,8 +39,9 @@
 		5B1FDC011C7DDAB800658AEA /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController.xib; path = "weather-by-mikwiss/View/MainViewController.xib"; sourceTree = SOURCE_ROOT; };
 		5B2F326D1C997F3C00238FAD /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		5B5B41031C85C52D00E9375C /* DayTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
-		5B7C65A51C98390F00CBF45D /* LabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
 		5B961F851C99D9180051B20D /* WeatherDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDay.swift; sourceTree = "<group>"; };
+		5B961F881C99DD220051B20D /* WeatherEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherEnum.swift; sourceTree = "<group>"; };
+		5BA0BF711C9AD25A005D7143 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		5BA177801C820D94007EE73A /* DayWeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayWeatherView.swift; path = "weather-by-mikwiss/View/DayWeatherView.swift"; sourceTree = SOURCE_ROOT; };
 		5BA177841C820FD3007EE73A /* DayWeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayWeatherView.xib; sourceTree = "<group>"; };
 		5BE3F3D41C8E1EDE0022E174 /* HourWeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HourWeatherView.xib; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		5B1FDBE81C7CDF8800658AEA /* weather-by-mikwiss */ = {
 			isa = PBXGroup;
 			children = (
+				5B961F871C99DCC50051B20D /* Enum */,
 				5B2F326C1C997F2F00238FAD /* Services */,
 				5B1FDBFF1C7CDFEE00658AEA /* Constants */,
 				5B1FDBFE1C7CDFDE00658AEA /* Utils */,
@@ -129,7 +132,6 @@
 				5B1FDC011C7DDAB800658AEA /* MainViewController.xib */,
 				5BE3F3E61C8F024C0022E174 /* MomentViewCell.swift */,
 				5BE3F3E71C8F024C0022E174 /* MomentViewCell.xib */,
-				5B7C65A51C98390F00CBF45D /* LabelExtension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				5B961F851C99D9180051B20D /* WeatherDay.swift */,
+				5BA0BF711C9AD25A005D7143 /* Weather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +167,14 @@
 				5B2F326D1C997F3C00238FAD /* WeatherService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		5B961F871C99DCC50051B20D /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				5B961F881C99DD220051B20D /* WeatherEnum.swift */,
+			);
+			name = Enum;
 			sourceTree = "<group>";
 		};
 		5BE3F3EA1C90459B0022E174 /* Old */ = {
@@ -212,6 +223,7 @@
 				TargetAttributes = {
 					5B1FDBE51C7CDF8800658AEA = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = MAHS5CRR5R;
 					};
 				};
 			};
@@ -306,8 +318,9 @@
 				5B2F326E1C997F3C00238FAD /* WeatherService.swift in Sources */,
 				5B5B41041C85C52D00E9375C /* DayTime.swift in Sources */,
 				5BE3F3EC1C9048220022E174 /* Helper.swift in Sources */,
+				5BA0BF721C9AD25A005D7143 /* Weather.swift in Sources */,
+				5B961F891C99DD220051B20D /* WeatherEnum.swift in Sources */,
 				5BE3F3E81C8F024C0022E174 /* MomentViewCell.swift in Sources */,
-				5B7C65A61C98390F00CBF45D /* LabelExtension.swift in Sources */,
 				5B1FDBEA1C7CDF8800658AEA /* AppDelegate.swift in Sources */,
 				5B1FDC021C7DDAB800658AEA /* MainViewController.swift in Sources */,
 				5BE3F3D71C8E29590022E174 /* HourWeatherView.swift in Sources */,
@@ -417,10 +430,13 @@
 			baseConfigurationReference = 941CFCD2A81143B9D4167AEF /* Pods-weather-by-mikwiss.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "weather-by-mikwiss/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mikwiss.weather-by-mikwiss";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -430,10 +446,13 @@
 			baseConfigurationReference = 3346F065B21771D9BB635E4D /* Pods-weather-by-mikwiss.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "weather-by-mikwiss/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mikwiss.weather-by-mikwiss";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

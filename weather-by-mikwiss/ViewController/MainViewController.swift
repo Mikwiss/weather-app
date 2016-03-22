@@ -14,12 +14,21 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     /// MARK : properties
     ///
     private var _days : [Int]!;
+    private var _weathers : [WeatherDay]!;
     private var _weatherService : WeatherService!;
     
     ///
     /// MARK : outlets
     ///
-    @IBOutlet weak var dayCollectionView: UICollectionView!
+    @IBOutlet weak var dayCollectionView: UICollectionView!;
+    @IBOutlet weak var temp : UILabel!;
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var tempMax: UILabel!
+    @IBOutlet weak var tempMin: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var weatherImg: UIImageView!
     
     ///
     /// MARK: Init
@@ -42,18 +51,27 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         initData();
         
         print(_days);
-        dayCollectionView.registerNib(UINib(nibName: "MomentViewCell", bundle: nil), forCellWithReuseIdentifier: MomentCellIdentifier);
         
+        dayCollectionView.registerNib(UINib(nibName: "MomentViewCell", bundle: nil), forCellWithReuseIdentifier: MomentCellIdentifier);
         
         dayCollectionView.delegate = self;
         dayCollectionView.dataSource = self;
         dayCollectionView.pagingEnabled = true;
         
         _weatherService = WeatherService();
-        
-        _weatherService.getWeatherForCity(3031582) { () -> () in
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        _weatherService.getWeatherForCity(3031582) { (daysWeather : [WeatherDay]) -> () in
             //After download
+            if (daysWeather.count > 0)
+            {
+                self._weathers = daysWeather;
+                self.SetData(daysWeather[0]);
+            }
+            
         }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,7 +85,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func initData()
     {
-     
+        _weathers = [WeatherDay]();
+        // Init display with : ---°
+        SetData(WeatherDay());
         _days = [Int]();
         _days.append(0);
 
@@ -89,6 +109,38 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     }
     
+    // Set a day to display
+    func SetData(weather : WeatherDay)
+    {
+        self.temp.text = WeatherHelpers.GetFormattedTemperature(weather.Temp, metric: "");
+        self.tempMax.text = WeatherHelpers.GetFormattedTemperature(weather.TempMax, metric: "");
+        self.tempMin.text = WeatherHelpers.GetFormattedTemperature(weather.TempMin, metric: "");
+        self.humidityLabel.text = WeatherHelpers.GetFormattedHumidity(weather.Humidity, metric: "");
+        self.pressureLabel.text = WeatherHelpers.GetFormattedPressure(weather.Pressure, metric: "");
+        self.speedLabel.text = WeatherHelpers.GetFormattedSpeed(weather.Speed, metric: "");
+        self.descLabel.text = weather.MainWeather.Description.uppercaseString;
+        
+        SetImageWeather(weather.MainWeather.Icon);
+    }
+    
+    // Set image day weather
+    func SetImageWeather(name : String)
+    {
+        var imgResult : UIImage!;
+        
+        if (UIImage(named: name) != nil)
+        {
+            imgResult = UIImage(named: name);
+        }
+        else
+        {
+           imgResult = UIImage(named: "None");
+        }
+        
+        // Effect here
+        self.weatherImg.image = imgResult;
+    }
+    
     ///
     /// MARK : UICollectionViewController
     ///
@@ -100,9 +152,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier(MomentCellIdentifier, forIndexPath: indexPath) as? MomentViewCell
         {
             cell.configureCell(_days[indexPath.row]);
-        
-            // Lauch event
-            //print(_days[indexPath.row]);
             
             return cell;
         }
@@ -127,5 +176,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 0;
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        let index = Int(scrollView.contentOffset.x) / Int(dayCollectionView.frame.width)
+        
+        SetData(_weathers[index]);
     }
 }

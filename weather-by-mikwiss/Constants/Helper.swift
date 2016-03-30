@@ -8,10 +8,13 @@
 
 import Foundation
 
-let MomentCellIdentifier = "MomentCell"
+let DayCellIdentifier = "DayCell"
+let HourCellIdentifier = "HourCell"
 
 class CalendarHelper {
     static let Instance = CalendarHelper();
+    
+    static let SECONDS_PER_DAY : Int = 86400;
     
     static func dayOfWeek() -> Int? {
         
@@ -24,29 +27,116 @@ class CalendarHelper {
         }
     }
     
-    static func GetDayName(idDay : Int) -> String{
+    static func hourOfDay() -> Int? {
+        
+        if let date : NSDate = NSDate(), let cal : NSCalendar = NSCalendar.currentCalendar(), let comp : NSDateComponents = cal.components(.Hour, fromDate : date) {
+            return comp.hour;
+        }
+        else {
+            return nil;
+        }
+    }
+    
+    static func hourOfDay(date : NSDate) -> Int? {
+        
+        if let cal : NSCalendar = NSCalendar.currentCalendar(), let comp : NSDateComponents = cal.components(.Hour, fromDate : date) {
+            return comp.hour;
+        }
+        else {
+            return nil;
+        }
+    }
+    
+    static func dayOfYear(date : NSDate) -> Int {
+        let calendar = NSCalendar.currentCalendar();
+        let day = calendar.ordinalityOfUnit(.Day, inUnit: .Year, forDate: date);
+        
+        return day;
+    }
+    
+    static func convertHourDayIntoDayMoment(hour : Int) -> Int {
+        var result = Int(ceil(Double(hour) / Double(3)));
+        
+        // Case midnight
+        if result == 0 {
+            result = 1;
+        }
+        return result;
+    }
+    
+    static func getDayName(idDay : Int) -> String{
         switch idDay
         {
         case 0 :
-            return "Today";
+            return "Aujourd'hui";
         case 1:
-            return "Sunday";
+            return "Dimanche";
         case 2 :
-            return "Monday";
+            return "Lundi";
         case 3 :
-            return "Tuesday";
+            return "Mardi";
         case 4 :
-            return "Wednesday";
+            return "Mercredi";
         case 5 :
-            return "Thursday";
+            return "Jeudi";
         case 6 :
-            return "Friday";
+            return "Vendredi";
         case 7 :
-            return "saturday";
+            return "Samedi";
         default :
             return "---";
         }
     }
+    
+    static func getHourName(idDay : Int) -> String{
+        switch idDay
+        {
+        case 0 :
+            return "Maintenant";
+        case 1 :
+            return "01h";
+        case 2:
+            return "04h";
+        case 3 :
+            return "07h";
+        case 4 :
+            return "10h";
+        case 5 :
+            return "13h";
+        case 6 :
+            return "16h";
+        case 7 :
+            return "19h";
+        case 8 :
+            return "22h";
+        case 25 :
+            return "22h";
+        case 26 :
+            return "01h";
+        default :
+            return "---";
+        }
+    }
+    
+    static func convertUTCTimeToDate(time : Int) -> NSDate {
+        let date : NSDate = NSDate(timeIntervalSince1970: NSTimeInterval(time));
+
+        return date;
+    }
+    
+    static func convertUTCTimeToIndexDay(time : Int) -> Int {
+        let date : NSDate = NSDate(timeIntervalSince1970: NSTimeInterval(time));
+        
+        return convertHourDayIntoDayMoment(hourOfDay(date)!);
+    }
+    
+    static func isSameDay(date1 : Int, date2 : Int) -> Bool {
+        let d1 = convertUTCTimeToDate(date1);
+        let d2 = convertUTCTimeToDate(date2);
+        
+        return (dayOfYear(d1) == dayOfYear(d2));
+    }
+
 }
 
 ///
@@ -55,7 +145,7 @@ class CalendarHelper {
 class WeatherHelpers {
     static let instance = WeatherHelpers();
     
-    static func GetFormattedTemperature(temp : Double, metric : String) -> String{
+    static func getFormattedTemperature(temp : Double, metric : String) -> String{
         if temp.isNaN
         {
             return "---°";
@@ -63,7 +153,7 @@ class WeatherHelpers {
         return "\(Int(round(temp)))°"
     }
     
-    static func GetFormattedPressure(pressure : Double, metric : String) -> String{
+    static func getFormattedPressure(pressure : Double, metric : String) -> String{
         if pressure.isNaN
         {
             return "--- hpa";
@@ -71,7 +161,7 @@ class WeatherHelpers {
         return "\(Int(round(pressure))) hpa"
     }
     
-    static func GetFormattedHumidity(humidity : Int, metric : String) -> String{
+    static func getFormattedHumidity(humidity : Int, metric : String) -> String{
         if humidity == 0
         {
             return "--- %";
@@ -79,7 +169,7 @@ class WeatherHelpers {
         return "\(Int(humidity)) %"
     }
     
-    static func GetFormattedSpeed(speed : Double, metric : String) -> String{
+    static func getFormattedSpeed(speed : Double, metric : String) -> String{
         if speed.isNaN
         {
             return "--- m/s";

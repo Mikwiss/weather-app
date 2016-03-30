@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:weather-by-mikwiss.xcodeproj">
+      location = "group:/Users/mbret/Documents/iOSapp/StackSocial/weather-by-mikwiss/Bordeaux m&#xe9;t&#xe9;o.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

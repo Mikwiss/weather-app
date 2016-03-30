@@ -15,7 +15,7 @@
 		5B2F326E1C997F3C00238FAD /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2F326D1C997F3C00238FAD /* WeatherService.swift */; };
 		5B5B41041C85C52D00E9375C /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B41031C85C52D00E9375C /* DayTime.swift */; };
 		5B961F861C99D9180051B20D /* WeatherDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B961F851C99D9180051B20D /* WeatherDay.swift */; };
-		5B961F891C99DD220051B20D /* WeatherEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B961F881C99DD220051B20D /* WeatherEnum.swift */; };
+		5B9E2AAC1CA7F11400E2732D /* HourWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E2AAB1CA7F11400E2732D /* HourWeather.swift */; };
 		5BA0BF721C9AD25A005D7143 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0BF711C9AD25A005D7143 /* Weather.swift */; };
 		5BA177811C820D94007EE73A /* DayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA177801C820D94007EE73A /* DayWeatherView.swift */; };
 		5BA177851C820FD3007EE73A /* DayWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA177841C820FD3007EE73A /* DayWeatherView.xib */; };
@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		2402C033EF7042D377BE6166 /* Pods_weather_by_mikwiss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weather_by_mikwiss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3346F065B21771D9BB635E4D /* Pods-weather-by-mikwiss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weather-by-mikwiss.release.xcconfig"; path = "Pods/Target Support Files/Pods-weather-by-mikwiss/Pods-weather-by-mikwiss.release.xcconfig"; sourceTree = "<group>"; };
-		5B1FDBE61C7CDF8800658AEA /* weather-by-mikwiss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weather-by-mikwiss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B1FDBE61C7CDF8800658AEA /* Bordeaux météo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bordeaux météo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1FDBE91C7CDF8800658AEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B1FDBF01C7CDF8800658AEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B1FDBF31C7CDF8800658AEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		5B2F326D1C997F3C00238FAD /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		5B5B41031C85C52D00E9375C /* DayTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
 		5B961F851C99D9180051B20D /* WeatherDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDay.swift; sourceTree = "<group>"; };
-		5B961F881C99DD220051B20D /* WeatherEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherEnum.swift; sourceTree = "<group>"; };
+		5B9E2AAB1CA7F11400E2732D /* HourWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourWeather.swift; sourceTree = "<group>"; };
 		5BA0BF711C9AD25A005D7143 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		5BA177801C820D94007EE73A /* DayWeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayWeatherView.swift; path = "weather-by-mikwiss/View/DayWeatherView.swift"; sourceTree = SOURCE_ROOT; };
 		5BA177841C820FD3007EE73A /* DayWeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayWeatherView.xib; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		5B1FDBE71C7CDF8800658AEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5B1FDBE61C7CDF8800658AEA /* weather-by-mikwiss.app */,
+				5B1FDBE61C7CDF8800658AEA /* Bordeaux météo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,6 +141,7 @@
 			children = (
 				5B961F851C99D9180051B20D /* WeatherDay.swift */,
 				5BA0BF711C9AD25A005D7143 /* Weather.swift */,
+				5B9E2AAB1CA7F11400E2732D /* HourWeather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,7 +173,6 @@
 		5B961F871C99DCC50051B20D /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				5B961F881C99DD220051B20D /* WeatherEnum.swift */,
 			);
 			name = Enum;
 			sourceTree = "<group>";
@@ -191,9 +191,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5B1FDBE51C7CDF8800658AEA /* weather-by-mikwiss */ = {
+		5B1FDBE51C7CDF8800658AEA /* Bordeaux météo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5B1FDBF81C7CDF8800658AEA /* Build configuration list for PBXNativeTarget "weather-by-mikwiss" */;
+			buildConfigurationList = 5B1FDBF81C7CDF8800658AEA /* Build configuration list for PBXNativeTarget "Bordeaux météo" */;
 			buildPhases = (
 				D5D6E3EA0ACC4F9A922096EA /* Check Pods Manifest.lock */,
 				5B1FDBE21C7CDF8800658AEA /* Sources */,
@@ -206,9 +206,9 @@
 			);
 			dependencies = (
 			);
-			name = "weather-by-mikwiss";
+			name = "Bordeaux météo";
 			productName = "weather-by-mikwiss";
-			productReference = 5B1FDBE61C7CDF8800658AEA /* weather-by-mikwiss.app */;
+			productReference = 5B1FDBE61C7CDF8800658AEA /* Bordeaux météo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -227,7 +227,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5B1FDBE11C7CDF8800658AEA /* Build configuration list for PBXProject "weather-by-mikwiss" */;
+			buildConfigurationList = 5B1FDBE11C7CDF8800658AEA /* Build configuration list for PBXProject "Bordeaux météo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -240,7 +240,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5B1FDBE51C7CDF8800658AEA /* weather-by-mikwiss */,
+				5B1FDBE51C7CDF8800658AEA /* Bordeaux météo */,
 			);
 		};
 /* End PBXProject section */
@@ -317,9 +317,9 @@
 				5BA177811C820D94007EE73A /* DayWeatherView.swift in Sources */,
 				5B2F326E1C997F3C00238FAD /* WeatherService.swift in Sources */,
 				5B5B41041C85C52D00E9375C /* DayTime.swift in Sources */,
+				5B9E2AAC1CA7F11400E2732D /* HourWeather.swift in Sources */,
 				5BE3F3EC1C9048220022E174 /* Helper.swift in Sources */,
 				5BA0BF721C9AD25A005D7143 /* Weather.swift in Sources */,
-				5B961F891C99DD220051B20D /* WeatherEnum.swift in Sources */,
 				5BE3F3E81C8F024C0022E174 /* MomentViewCell.swift in Sources */,
 				5B1FDBEA1C7CDF8800658AEA /* AppDelegate.swift in Sources */,
 				5B1FDC021C7DDAB800658AEA /* MainViewController.swift in Sources */,
@@ -435,7 +435,7 @@
 				INFOPLIST_FILE = "weather-by-mikwiss/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mikwiss.weather-by-mikwiss";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bordeaux météo";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -451,7 +451,7 @@
 				INFOPLIST_FILE = "weather-by-mikwiss/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mikwiss.weather-by-mikwiss";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bordeaux météo";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -460,7 +460,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5B1FDBE11C7CDF8800658AEA /* Build configuration list for PBXProject "weather-by-mikwiss" */ = {
+		5B1FDBE11C7CDF8800658AEA /* Build configuration list for PBXProject "Bordeaux météo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B1FDBF61C7CDF8800658AEA /* Debug */,
@@ -469,7 +469,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5B1FDBF81C7CDF8800658AEA /* Build configuration list for PBXNativeTarget "weather-by-mikwiss" */ = {
+		5B1FDBF81C7CDF8800658AEA /* Build configuration list for PBXNativeTarget "Bordeaux météo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B1FDBF91C7CDF8800658AEA /* Debug */,

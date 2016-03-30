@@ -15,12 +15,10 @@ class MomentViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        
     }
     
-    func configureCell(idDay : Int)
+    func configureCell(text : String)
     {
-        momentLbl.text = CalendarHelper.GetDayName(idDay).uppercaseString;
+        momentLbl.text = text;
     }
 }

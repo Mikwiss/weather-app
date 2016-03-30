@@ -21,6 +21,7 @@ class WeatherDay {
     private var _humidity : Int!;
     private var _speed : Double!;
     private var _mainWeather : Weather!;
+    private var _hourWeather : [HourWeather];
     
     ///
     /// MARK : init
@@ -35,12 +36,19 @@ class WeatherDay {
         _speed = Double.NaN;
         _humidity = 0;
         _mainWeather = Weather(id: 0, desc: "---", main: "---", icon: "---");
+        
+        _hourWeather = [HourWeather]();
+        
+        // Simulate weather
+        for _ in 0 ..< 9 {
+            _hourWeather.append(HourWeather())
+        }
     }
     
     ///
     /// MARK : members
     ///
-    var Day : Int {
+    var TimeUTC : Int {
         get {
             return _day;
         }
@@ -118,5 +126,24 @@ class WeatherDay {
         {
             _mainWeather = value;
         }
+    }
+    
+    var Weathers : [HourWeather] {
+        get {
+            return _hourWeather;
+        }
+    }
+    
+    ///
+    /// MARK : methods
+    ///
+    func appendHourWeather(index : Int, hw : HourWeather)
+    {
+        _hourWeather[index] = hw;
+    }
+    
+    func appendHourWeather(hw : HourWeather)
+    {
+        _hourWeather.append(hw);
     }
 }
